@@ -1,0 +1,156 @@
+{
+  "smartphones": [
+    {
+      "id": 1,
+      "name": "Galaxy S22 Ultra",
+      "price": "32999",
+      "oldPrice": "74000",
+      "save": "32999",
+      "discount": "56% OFF",
+      "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754635407/galaxy_ultra22-new_gmrzsb.svg"
+    },
+    {
+      "id": 2,
+      "name": "Galaxy M13 (4GB | 64GB)",
+      "price": "10499",
+      "oldPrice": "14999",
+      "save": "4500",
+      "discount": "56% OFF",
+      "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754632857/galaxy_m13_nuvmno.svg"
+    },
+    {
+      "id": 3,
+      "name": "Galaxy M33 (4GB | 64GB)",
+      "price": "16999",
+      "oldPrice": "24999",
+      "save": "8000",
+      "discount": "56% OFF",
+      "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754633129/galax_m33_pawxzj.svg"
+    },
+    {
+      "id": 4,
+      "name": "Galaxy M53 (4GB | 64GB)",
+      "price": "31999",
+      "oldPrice": "40999",
+      "save": "9000",
+      "discount": "56% OFF",
+      "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754633129/galax_m53_h0wbdd.svg"
+    },
+    {
+      "id": 5,
+      "name": "Galaxy S22 Ultra",
+      "price": "67999",
+      "oldPrice": "85999",
+      "save": "18000",
+      "discount": "56% OFF",
+      "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754632599/s22_ultra_sfyayv.svg"
+    }
+  ],
+  "topCategories": [
+    {
+      "id": 1,
+      "name": "Mobile",
+      "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754635407/galaxy_ultra22-new_gmrzsb.svg"
+    },
+    {
+      "id": 2,
+      "name": "Cosmetics",
+      "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754633819/cosmetic_dxnjlk.svg"
+    },
+    {
+      "id": 3,
+      "name": "Electronics",
+      "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754633816/washing_machine_bhfw67.svg"
+    },
+    {
+      "id": 4,
+      "name": "Furniture",
+      "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754633815/sofa_pf9ftq.svg"
+    },
+    {
+      "id": 5,
+      "name": "Watches",
+      "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754633817/watch_apple_kcwns5.svg"
+    },
+    {
+      "id": 6,
+      "name": "Decor",
+      "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754633817/decor_yej2xe.svg"
+    },
+    {
+      "id": 7,
+      "name": "Accessories",
+      "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754633816/accessory_phzs5j.svg"
+    }
+  ],
+  "electronicsBrands": [
+    {
+      "id": 1,
+      "name": "IPHONE",
+      "brand": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754641283/apple-logo_iq1rxp.svg",
+      "discount": "UP TO 80% OFF",
+      "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754634297/ihpone_qq9zzu.svg",
+      "bgColor": "#313131",
+      "nameBgColor": "#494949",
+      "textColor": "white"
+    },
+    {
+      "id": 2,
+      "name": "REALME",
+      "brand": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754641283/realme-logo_qzpywl.svg",
+      "discount": "UP TO 80% OFF",
+      "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754634297/realme_aw2uxj.svg",
+      "bgColor": "#FFF3CC",
+      "nameBgColor": "#F6DE8D",
+      "textColor": "heading"
+    },
+    {
+      "id": 3,
+      "name": "XIAOMI",
+      "brand": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754641283/xiaomi_logo_h2cbrt.svg",
+      "discount": "UP TO 80% OFF",
+      "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754634297/xiaomi_uetvyx.svg",
+      "bgColor": "#FFECDF",
+      "nameBgColor": "#FFD1B0",
+      "textColor": "heading"
+    }
+  ],
+  "dailyEssentials": [
+    {
+      "id": 1,
+      "name": "Daily Essentials",
+      "discount": "UP TO 50% OFF",
+      "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754634683/daily_essential_vmbalw.svg"
+    },
+    {
+      "id": 2,
+      "name": "Vegitables",
+      "discount": "UP TO 50% OFF",
+      "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754634683/vegetables_gjj1cl.svg"
+    },
+    {
+      "id": 3,
+      "name": "Fruits",
+      "discount": "UP TO 50% OFF",
+      "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754634684/fruits_n2k2h9.svg"
+    },
+    {
+      "id": 4,
+      "name": "Strawberry",
+      "discount": "UP TO 50% OFF",
+      "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754634684/stawrberry_mbyu5l.svg"
+    },
+    {
+      "id": 5,
+      "name": "Mango",
+      "discount": "UP TO 50% OFF",
+      "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754634685/mango_o5k9v2.svg"
+    },
+    {
+      "id": 6,
+      "name": "Cherry",
+      "discount": "UP TO 50% OFF",
+      "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754634685/cherry_kmf6v7.svg"
+    }
+  ]
+}

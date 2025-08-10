@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #008ecc;
+  --color-text: #666666;
+  --color-heading: #222222;
+  --color-light: #888888;
+  --color-border: #ededed;
+  --color-bg1: #f5f5f5;
+  --color-bg2: #f6f6fc;
+  --color-yellow1: #e3bc01;
+  --color-yellow2: #e3bc01;
+  --color-bg3: #f3f9fb;
+  --color-line: #d9d9d9;
+  --color-white: #fbfbfb;
+}
+
+button {
+  cursor: pointer;
+}
+
+.ec-container {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 120px;
+  padding-right: 120px;
+}
