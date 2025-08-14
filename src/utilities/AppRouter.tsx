@@ -1,29 +1,33 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Home from '../pages/Home';
-import SmartPhones from '../pages/SmartPhones';
-import AddSmartPhone from '../pages/AddSmartPhone';
-import Cart from '../pages/Cart';
-import ProductPage from '../pages/ProductPage';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "../pages/Home";
+import SmartPhones from "../pages/SmartPhones";
+import AddSmartPhone from "../pages/AddSmartPhone";
+import Cart from "../pages/Cart";
+import ProductPage from "../pages/ProductPage";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <Home />,
   },
   {
-    path: '/smartphones',
+    path: "/smartphones",
     element: <SmartPhones />,
   },
   {
-    path: '/addPhone',
+    path: "/addPhone",
     element: <AddSmartPhone />,
   },
   {
-    path: '/cart',
+    path: "/editPhone/:id",
+    element: <AddSmartPhone />,
+  },
+  {
+    path: "/cart",
     element: <Cart />,
   },
   {
-    path: '/product/1',
+    path: "/product/1",
     element: <ProductPage />,
   },
 ]);

@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AppLayout from "../layouts/AppLayout";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import type { Product } from "../utilities/cartTypes";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../slices/productSlice";
 import axios from "axios";
+import { useSelector } from "react-redux";
+import type { RootState } from "../store";
 
 const AddSmartPhone = () => {
   const [formData, setFormData] = useState<Product>({
@@ -17,6 +19,21 @@ const AddSmartPhone = () => {
     imageUrl: "",
   });
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const products = useSelector((state: RootState) => state.product.products);
+
+  const { id } = useParams();
+  const isEditMode = Boolean(id);
+
+  useEffect(() => {
+    if (isEditMode) {
+      const product = products.find((p) => p.id === Number(id));
+
+      if (product) {
+        setFormData(product);
+        setImage(product.imageUrl);
+      }
+    }
+  }, [id]);
 
   const dispatch = useDispatch();
 
@@ -87,7 +104,7 @@ const AddSmartPhone = () => {
       <div className='ec-container mt-[120px]'>
         <div className='flex items-center justify-between mb-10'>
           <h1 className='text-2xl font-bold  w-fit after:content[""] after:block after:h-1  after:bg-primary after:mt-5'>
-            Add new product
+            {isEditMode ? `Update proudct` : `Add new product`}
           </h1>
           <button
             onClick={handleGoBack}
@@ -189,7 +206,7 @@ const AddSmartPhone = () => {
             className='mt-5 bg-primary text-white font-medium py-2 px-5 rounded-2xl transition hover:bg-light'
             onClick={handleFormSubmit}
           >
-            Add Product
+            {isEditMode ? "Update" : "Add Product"}
           </button>
         </form>
       </div>
