@@ -4,7 +4,6 @@ import AppFooterDownload from "./AppFooterDownload";
 import AppFooterLinks from "./AppFooterLinks";
 
 const AppFooter = () => {
-  console.log(footerBgUrl, "url");
   return (
     <footer
       className='mt-[120px] bg-no-repeat bg-cover bg-center text-white'

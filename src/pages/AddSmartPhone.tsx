@@ -1,18 +1,13 @@
 import { useState } from "react";
 import AppLayout from "../layouts/AppLayout";
 import { useNavigate } from "react-router-dom";
-
-interface SmartPhone {
-  name: string;
-  price: string;
-  oldPrice: string;
-  save: string;
-  discount: string;
-  imageUrl: string;
-}
+import type { Product } from "../utilities/cartTypes";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../slices/productSlice";
 
 const AddSmartPhone = () => {
-  const [formData, setFormData] = useState<SmartPhone>({
+  const [formData, setFormData] = useState<Product>({
+    id: null,
     name: "",
     price: "",
     oldPrice: "",
@@ -21,22 +16,27 @@ const AddSmartPhone = () => {
     imageUrl: "",
   });
 
+  const dispatch = useDispatch();
+
   const [image, setImage] = useState<string>("");
   const navigate = useNavigate();
 
-  const handleImageChange = (e) => {
-    console.log(e.target.files[0]);
-    const file = e.target.files[0];
-
-    setImage(URL.createObjectURL(file));
-  };
-
-  const handleClearImage = () => {
-    setImage("");
-  };
-
   const handleGoBack = () => {
     navigate(-1);
+  };
+
+  const handleFormData = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value, files } = e.target;
+
+    if (files && files[0]) {
+      const file = files[0];
+      const imageUrl = URL.createObjectURL(file);
+
+      setFormData((prev) => ({ ...prev, [name]: imageUrl }));
+      setImage(imageUrl);
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
   };
 
   return (
@@ -61,6 +61,8 @@ const AddSmartPhone = () => {
                 name='name'
                 placeholder='Name'
                 className='border-0 outline-0 w-full'
+                value={formData.name}
+                onChange={handleFormData}
               />
             </div>
             <div className='border border-text p-3'>
@@ -69,6 +71,8 @@ const AddSmartPhone = () => {
                 name='price'
                 placeholder='price'
                 className='border-0 outline-0 w-full'
+                value={formData.price}
+                onChange={handleFormData}
               />
             </div>
             <div className='border border-text p-3'>
@@ -77,6 +81,8 @@ const AddSmartPhone = () => {
                 name='oldPrice'
                 placeholder='oldPrice'
                 className='border-0 outline-0 w-full'
+                value={formData.oldPrice}
+                onChange={handleFormData}
               />
             </div>
             <div className='border border-text p-3'>
@@ -85,6 +91,8 @@ const AddSmartPhone = () => {
                 name='discount'
                 placeholder='Dicount'
                 className='border-0 outline-0 w-full'
+                value={formData.discount}
+                onChange={handleFormData}
               />
             </div>
             <div className='border border-text p-3'>
@@ -93,16 +101,19 @@ const AddSmartPhone = () => {
                 name='save'
                 placeholder='Save amount'
                 className='border-0 outline-0 w-full'
+                value={formData.save}
+                onChange={handleFormData}
               />
             </div>
             <div className='border border-text p-3 w-fit'>
               <label className='h-full w-full cursor-pointer'>
                 <input
                   type='file'
+                  name='imageUrl'
                   hidden
                   className='w-full h-full'
                   accept='image/*'
-                  onChange={handleImageChange}
+                  onChange={handleFormData}
                 />
                 <p>Upload Image</p>
               </label>
@@ -119,13 +130,22 @@ const AddSmartPhone = () => {
               </div>
               <button
                 className='py-2 px-5 bg-red-400 text-white rounded-3xl transition hover:shadow-[0_0_7px_rgba(0,0,0,0.3)]'
-                onClick={handleClearImage}
+                onClick={() => {
+                  setFormData((prev) => ({ ...prev, imageUrl: "" }));
+                  setImage("");
+                }}
                 type='button'
               >
                 remove
               </button>
             </div>
           )}
+          <button
+            className='mt-5 bg-primary text-white font-medium py-2 px-5 rounded-2xl transition hover:bg-light'
+            onClick={() => dispatch(addProduct(formData))}
+          >
+            Add Product
+          </button>
         </form>
       </div>
     </AppLayout>
