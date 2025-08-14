@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "name": "Galaxy S22 Ultra",
+    "price": "32999",
+    "oldPrice": "74000",
+    "save": "32999",
+    "discount": "56% OFF",
+    "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754635407/galaxy_ultra22-new_gmrzsb.svg"
+  },
+  {
+    "id": 2,
+    "name": "Galaxy M13 (4GB | 64GB)",
+    "price": "10499",
+    "oldPrice": "14999",
+    "save": "4500",
+    "discount": "56% OFF",
+    "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754632857/galaxy_m13_nuvmno.svg"
+  },
+  {
+    "id": 3,
+    "name": "Galaxy M33 (4GB | 64GB)",
+    "price": "16999",
+    "oldPrice": "24999",
+    "save": "8000",
+    "discount": "56% OFF",
+    "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754633129/galax_m33_pawxzj.svg"
+  },
+  {
+    "id": 4,
+    "name": "Galaxy M53 (4GB | 64GB)",
+    "price": "31999",
+    "oldPrice": "40999",
+    "save": "9000",
+    "discount": "56% OFF",
+    "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754633129/galax_m53_h0wbdd.svg"
+  },
+  {
+    "id": 5,
+    "name": "Galaxy S22 Ultra",
+    "price": "67999",
+    "oldPrice": "85999",
+    "save": "18000",
+    "discount": "56% OFF",
+    "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754632599/s22_ultra_sfyayv.svg"
+  }
+]

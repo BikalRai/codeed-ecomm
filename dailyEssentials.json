@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Daily Essentials",
+    "discount": "UP TO 50% OFF",
+    "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754634683/daily_essential_vmbalw.svg"
+  },
+  {
+    "id": 2,
+    "name": "Vegitables",
+    "discount": "UP TO 50% OFF",
+    "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754634683/vegetables_gjj1cl.svg"
+  },
+  {
+    "id": 3,
+    "name": "Fruits",
+    "discount": "UP TO 50% OFF",
+    "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754634684/fruits_n2k2h9.svg"
+  },
+  {
+    "id": 4,
+    "name": "Strawberry",
+    "discount": "UP TO 50% OFF",
+    "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754634684/stawrberry_mbyu5l.svg"
+  },
+  {
+    "id": 5,
+    "name": "Mango",
+    "discount": "UP TO 50% OFF",
+    "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754634685/mango_o5k9v2.svg"
+  },
+  {
+    "id": 6,
+    "name": "Cherry",
+    "discount": "UP TO 50% OFF",
+    "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754634685/cherry_kmf6v7.svg"
+  }
+]

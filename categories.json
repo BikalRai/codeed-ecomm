@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Mobile",
+    "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754635407/galaxy_ultra22-new_gmrzsb.svg"
+  },
+  {
+    "id": 2,
+    "name": "Cosmetics",
+    "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754633819/cosmetic_dxnjlk.svg"
+  },
+  {
+    "id": 3,
+    "name": "Electronics",
+    "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754633816/washing_machine_bhfw67.svg"
+  },
+  {
+    "id": 4,
+    "name": "Furniture",
+    "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754633815/sofa_pf9ftq.svg"
+  },
+  {
+    "id": 5,
+    "name": "Watches",
+    "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754633817/watch_apple_kcwns5.svg"
+  },
+  {
+    "id": 6,
+    "name": "Decor",
+    "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754633817/decor_yej2xe.svg"
+  },
+  {
+    "id": 7,
+    "name": "Accessories",
+    "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754633816/accessory_phzs5j.svg"
+  }
+]

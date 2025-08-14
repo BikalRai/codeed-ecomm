@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "IPHONE",
+    "brand": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754641283/apple-logo_iq1rxp.svg",
+    "discount": "UP TO 80% OFF",
+    "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754634297/ihpone_qq9zzu.svg",
+    "bgColor": "#313131",
+    "nameBgColor": "#494949",
+    "textColor": "white"
+  },
+  {
+    "id": 2,
+    "name": "REALME",
+    "brand": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754641283/realme-logo_qzpywl.svg",
+    "discount": "UP TO 80% OFF",
+    "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754634297/realme_aw2uxj.svg",
+    "bgColor": "#FFF3CC",
+    "nameBgColor": "#F6DE8D",
+    "textColor": "heading"
+  },
+  {
+    "id": 3,
+    "name": "XIAOMI",
+    "brand": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754641283/xiaomi_logo_h2cbrt.svg",
+    "discount": "UP TO 80% OFF",
+    "imageUrl": "https://res.cloudinary.com/dghzxdx84/image/upload/v1754634297/xiaomi_uetvyx.svg",
+    "bgColor": "#FFECDF",
+    "nameBgColor": "#FFD1B0",
+    "textColor": "heading"
+  }
+]
