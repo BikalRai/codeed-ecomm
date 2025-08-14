@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import type { Product } from "../utilities/cartTypes";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../slices/productSlice";
+import axios from "axios";
 
 const AddSmartPhone = () => {
   const [formData, setFormData] = useState<Product>({
@@ -15,6 +16,7 @@ const AddSmartPhone = () => {
     discount: "",
     imageUrl: "",
   });
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const dispatch = useDispatch();
 
@@ -25,17 +27,58 @@ const AddSmartPhone = () => {
     navigate(-1);
   };
 
+  const handleImagePreview = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setImage(URL.createObjectURL(file));
+      setFormData((prev) => ({ ...prev, imageUrl: "" }));
+    }
+  };
+
   const handleFormData = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value, files } = e.target;
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
-    if (files && files[0]) {
-      const file = files[0];
-      const imageUrl = URL.createObjectURL(file);
+  const handleFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
 
-      setFormData((prev) => ({ ...prev, [name]: imageUrl }));
-      setImage(imageUrl);
-    } else {
-      setFormData((prev) => ({ ...prev, [name]: value }));
+    try {
+      let imageUrl = formData.imageUrl;
+
+      if (image && !imageUrl) {
+        const cloudForm = new FormData();
+        cloudForm.append(
+          "file",
+          document.querySelector<HTMLInputElement>('input[name="imageUrl"]')!
+            .files![0]
+        );
+        cloudForm.append("upload_preset", "e-comm");
+
+        const res = await axios.post(
+          "https://api.cloudinary.com/v1_1/dghzxdx84/image/upload",
+          cloudForm
+        );
+
+        imageUrl = res.data.secure_url;
+      }
+
+      const finalData = { ...formData, imageUrl, id: Date.now() };
+
+      dispatch(addProduct(finalData));
+
+      setFormData({
+        id: null,
+        name: "",
+        price: "",
+        oldPrice: "",
+        save: "",
+        discount: "",
+        imageUrl: "",
+      });
+      setImage("");
+    } catch (error) {
+      console.error("Cloudinary upload failed", error);
     }
   };
 
@@ -113,19 +156,21 @@ const AddSmartPhone = () => {
                   hidden
                   className='w-full h-full'
                   accept='image/*'
-                  onChange={handleFormData}
+                  onChange={handleImagePreview}
                 />
                 <p>Upload Image</p>
               </label>
+              {isLoading && <p>Loading ...</p>}
             </div>
           </div>
+
           {image && (
             <div className='ms-[50%] w-fit flex gap-6 items-center'>
               <div className='h-[200px] w-[200px] overflow-hidden'>
                 <img
                   src={image}
                   alt=''
-                  className='h-full w-full object-cover'
+                  className='h-full w-full object-contain'
                 />
               </div>
               <button
@@ -142,7 +187,7 @@ const AddSmartPhone = () => {
           )}
           <button
             className='mt-5 bg-primary text-white font-medium py-2 px-5 rounded-2xl transition hover:bg-light'
-            onClick={() => dispatch(addProduct(formData))}
+            onClick={handleFormSubmit}
           >
             Add Product
           </button>
