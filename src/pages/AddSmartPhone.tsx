@@ -3,7 +3,7 @@ import AppLayout from "../layouts/AppLayout";
 import { useNavigate, useParams } from "react-router-dom";
 import type { Product } from "../utilities/cartTypes";
 import { useDispatch } from "react-redux";
-import { addProduct } from "../slices/productSlice";
+import { addProduct, updateProduct } from "../slices/productSlice";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import type { RootState } from "../store";
@@ -80,9 +80,12 @@ const AddSmartPhone = () => {
         imageUrl = res.data.secure_url;
       }
 
-      const finalData = { ...formData, imageUrl, id: Date.now() };
-
-      dispatch(addProduct(finalData));
+      if (isEditMode) {
+        dispatch(updateProduct({ ...formData, imageUrl }));
+      } else {
+        const finalData = { ...formData, imageUrl, id: Date.now() };
+        dispatch(addProduct(finalData));
+      }
 
       setFormData({
         id: null,
