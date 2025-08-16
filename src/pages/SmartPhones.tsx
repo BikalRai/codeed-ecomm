@@ -1,18 +1,24 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import AppLayout from "../layouts/AppLayout";
-import { getProducts } from "../utilities/api";
+// import { getProducts } from "../utilities/api";
 import { Link } from "react-router-dom";
 import SmartphoneItem from "../components/SmartphoneItem";
+import smartphones from "../../products.json";
+import { useSelector } from "react-redux";
+import type { RootState } from "../store";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { setAllProducts } from "../slices/productSlice";
 
-interface Smartphone {
-  id: number;
-  name: string;
-  price: string;
-  oldPrice: string;
-  save: string;
-  discount: string;
-  imageUrl: string;
-}
+// interface Smartphone {
+//   id: number;
+//   name: string;
+//   price: string;
+//   oldPrice: string;
+//   save: string;
+//   discount: string;
+//   imageUrl: string;
+// }
 
 const tableHeaders = [
   "ID",
@@ -26,16 +32,27 @@ const tableHeaders = [
 ];
 
 const SmartPhones = () => {
-  const [smartphonesList, setSmarphonesList] = useState<Smartphone[]>([]);
+  // const [smartphonesList, setSmarphonesList] = useState<Smartphone[]>([]);
+
+  // useEffect(() => {
+  //   const fetchPhones = async () => {
+  //     const res = await getProducts();
+  //     setSmarphonesList([...res.data]);
+  //   };
+
+  //   fetchPhones();
+  // }, []);
+
+  const { products, initialized } = useSelector(
+    (state: RootState) => state.product
+  );
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const fetchPhones = async () => {
-      const res = await getProducts();
-      setSmarphonesList([...res.data]);
-    };
-
-    fetchPhones();
-  }, []);
+    if (!initialized) {
+      dispatch(setAllProducts(smartphones));
+    }
+  }, [initialized, dispatch]);
 
   return (
     <div>
@@ -64,7 +81,7 @@ const SmartPhones = () => {
                 </div>
               ))}
             </div>
-            {smartphonesList.map((smartphone) => (
+            {products.map((smartphone) => (
               // <ProductCard product={smartphone} />
               <SmartphoneItem key={smartphone.id} smartphone={smartphone} />
             ))}

@@ -4,6 +4,7 @@ import SmartPhones from "../pages/SmartPhones";
 import AddSmartPhone from "../pages/AddSmartPhone";
 import Cart from "../pages/Cart";
 import ProductPage from "../pages/ProductPage";
+import OrderPage from "../pages/OrderPage";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "/product/1",
     element: <ProductPage />,
+  },
+  {
+    path: "/order",
+    element: <OrderPage />,
   },
 ]);
 

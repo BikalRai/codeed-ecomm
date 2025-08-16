@@ -3,11 +3,14 @@ import { useDispatch } from "react-redux";
 import { deleteFromCart, removeAllfromCart } from "../slices/cartSlice";
 import { useSelector } from "react-redux";
 import type { RootState } from "../store";
+import { placeOrder } from "../slices/orderSlice";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const cart = useSelector((state: RootState) => state.cart.items);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   return (
     <AppLayout>
@@ -38,12 +41,23 @@ const Cart = () => {
           ))}
         </div>
         {cart.length > 0 && (
-          <button
-            onClick={() => dispatch(removeAllfromCart())}
-            className='mt-5 p-2 bg-amber-900 rounded-2xl text-white'
-          >
-            Remove All
-          </button>
+          <div className='flex items-center mt-6 gap-4'>
+            <button
+              onClick={() => {
+                dispatch(placeOrder(cart));
+                navigate("/order");
+              }}
+              className='mt-5 p-2 bg-primary rounded-2xl text-white transition hover:shadow-xl'
+            >
+              Proceeed to Order
+            </button>
+            <button
+              onClick={() => dispatch(removeAllfromCart())}
+              className='mt-5 p-2 bg-amber-900 rounded-2xl text-white transition hover:shadow-xl'
+            >
+              Remove All
+            </button>
+          </div>
         )}
       </div>
     </AppLayout>

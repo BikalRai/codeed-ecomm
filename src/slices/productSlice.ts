@@ -4,16 +4,22 @@ import productsData from "../../products.json";
 
 type ProductState = {
   products: Product[];
+  initialized: boolean;
 };
 
 const initialState: ProductState = {
   products: productsData,
+  initialized: false,
 };
 
 const productSlice = createSlice({
   name: "product",
   initialState,
   reducers: {
+    setAllProducts(state, action: PayloadAction<Product[]>) {
+      state.products = action.payload;
+      state.initialized = true;
+    },
     addProduct(state, action: PayloadAction<Product>) {
       state.products.push(action.payload);
     },
@@ -32,7 +38,7 @@ const productSlice = createSlice({
   },
 });
 
-export const { addProduct, updateProduct, deleteProduct } =
+export const { setAllProducts, addProduct, updateProduct, deleteProduct } =
   productSlice.actions;
 
 export default productSlice.reducer;
