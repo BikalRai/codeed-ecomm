@@ -51,6 +51,14 @@ const OrderPage = () => {
             <p>Rs {total}</p>
           </div>
         </div>
+        {items.length > 0 && (
+          <button
+            onClick={() => dispatch(clearOrder())}
+            className='bg-primary py-3 px-6 font-medium text-white rounded-3xl transition hover:shadow-2xl'
+          >
+            Clear Order
+          </button>
+        )}
       </div>
     </AppLayout>
   );
